@@ -79,13 +79,13 @@
 
 #else
 	// No assert MACROS
-	#define cAssertMsg( e, m ) 	((void)0)
-	#define cAssert( e ) 		((void)0)
+	#define cAssertMsg( e, m )  ((void)0)
+	#define cAssert( e )        ((void)0)
 	// No info MACROS
-	#define infoMagenta(s)		((void)0)
-	#define infoRed(s)			((void)0)
-	#define infoGreen(s)		((void)0)
-	#define infoYellow(s)		((void)0)
-	#define infoBlue(s)			((void)0)
-	#define infoCyan(s)			((void)0)
+	#define infoMagenta(s)      ((void)0)
+	#define infoRed(s)          ((void)0)
+	#define infoGreen(s)        ((void)0)
+	#define infoYellow(s)       ((void)0)
+	#define infoBlue(s)         ((void)0)
+	#define infoCyan(s)         ((void)0)
 #endif
