@@ -1,6 +1,6 @@
 #include "cAssert.h"
 
-volatile int p;
+int p;
 
 int main( int argc, char **argv){
 	int np;
