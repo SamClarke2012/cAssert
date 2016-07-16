@@ -17,36 +17,40 @@
 #define printCyan(s) (printf(ANSI_COLOR_CYAN s ANSI_COLOR_RESET))
 
 // Assert MACROS: Strict must equal 1, Normal can be any val > 0.
-#define cAssertStrictMsg( e, m ) ( e == 1 ) ? : \
+
+#define cAssertMsg( e, m ) ( e == 1 ) ? : \
 ({\
-printf(ANSI_COLOR_RED "Assertion %s Failed [= %d]\n"ANSI_COLOR_RESET, __STRING(e), e);\
-printf(ANSI_COLOR_YELLOW "\tBlame: %s => function: %s => line: %d\n"\
-ANSI_COLOR_RESET, __FILE__, __func__, __LINE__);\
-printf(ANSI_COLOR_CYAN "\tAssociated Info: " m ANSI_COLOR_RESET);\
+printf(\
+ANSI_COLOR_RED\
+	"Assertion %s failed\n"\
+	ANSI_COLOR_RESET\
+	, __STRING(e));\
+printf(\
+	ANSI_COLOR_CYAN\
+	"\tBlame: %s => function: %s => line: %d\n"\
+	ANSI_COLOR_RESET,\
+__FILE__, __func__, __LINE__);\
+printf(\
+	ANSI_COLOR_CYAN\
+	"\tAssociated Info: "\
+	ANSI_COLOR_RESET\
+	ANSI_COLOR_YELLOW\
+	m\
+	ANSI_COLOR_RESET);\
 exit(0);\
 })
 
-#define cAssertStrict( e ) ( e == 1 ) ? : \
+#define cAssert( e ) ( e == 1 ) ? : \
 ({\
-printf(ANSI_COLOR_RED "Assertion %s Failed [= %d]\n"ANSI_COLOR_RESET, __STRING(e), e);\
-printf(ANSI_COLOR_YELLOW "\tBlame: %s => function: %s => line: %d\n"\
-ANSI_COLOR_RESET, __FILE__, __func__, __LINE__);\
-exit(0);\
-})
-
-#define cAssertMsg( e, m ) ( e > 0 ) ? : \
-({\
-printf(ANSI_COLOR_RED "Assertion %s Failed [= %d]\n"ANSI_COLOR_RESET, __STRING(e), e);\
-printf(ANSI_COLOR_YELLOW "\tBlame: %s => function: %s => line: %d\n"\
-ANSI_COLOR_RESET, __FILE__, __func__, __LINE__);\
-printf(ANSI_COLOR_CYAN "\tAssociated Info: " m ANSI_COLOR_RESET);\
-exit(0);\
-})
-
-#define cAssert( e ) ( e > 0 ) ? : \
-({\
-printf(ANSI_COLOR_RED "Assertion %s Failed [= %d]\n"ANSI_COLOR_RESET, __STRING(e), e);\
-printf(ANSI_COLOR_YELLOW "\tBlame: %s => function: %s => line: %d\n"\
-ANSI_COLOR_RESET, __FILE__, __func__, __LINE__);\
+printf(\
+	ANSI_COLOR_RED\
+	"Assertion %s failed\n"\
+	ANSI_COLOR_RESET\
+	, __STRING(e));\
+printf(\
+	ANSI_COLOR_CYAN\
+	"\tBlame: %s => function: %s => line: %d\n"\
+	ANSI_COLOR_RESET\
+	, __FILE__, __func__, __LINE__);\
 exit(0);\
 })
