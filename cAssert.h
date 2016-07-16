@@ -19,34 +19,34 @@
 // Assert MACROS: Strict must equal 1, Normal can be any val > 0.
 #define cAssertStrictMsg( e, m ) ( e == 1 ) ? : \
 ({\
-printf(ANSI_COLOR_RED "Assertion Failed (Expression = %d)\n"ANSI_COLOR_RESET, e);\
-printf(ANSI_COLOR_YELLOW "Blame: %s => function: %s => line: %d\n"\
+printf(ANSI_COLOR_RED "Assertion %s Failed [= %d]\n"ANSI_COLOR_RESET, __STRING(e), e);\
+printf(ANSI_COLOR_YELLOW "\tBlame: %s => function: %s => line: %d\n"\
 ANSI_COLOR_RESET, __FILE__, __func__, __LINE__);\
-printf(ANSI_COLOR_CYAN "Associated Info: " m ANSI_COLOR_RESET);\
+printf(ANSI_COLOR_CYAN "\tAssociated Info: " m ANSI_COLOR_RESET);\
 exit(0);\
 })
 
 #define cAssertStrict( e ) ( e == 1 ) ? : \
 ({\
-printf(ANSI_COLOR_RED "Assertion Failed (Expr = %d)\n"ANSI_COLOR_RESET, e);\
-printf(ANSI_COLOR_YELLOW "Blame: %s => function: %s => line: %d\n"\
+printf(ANSI_COLOR_RED "Assertion %s Failed [= %d]\n"ANSI_COLOR_RESET, __STRING(e), e);\
+printf(ANSI_COLOR_YELLOW "\tBlame: %s => function: %s => line: %d\n"\
 ANSI_COLOR_RESET, __FILE__, __func__, __LINE__);\
 exit(0);\
 })
 
 #define cAssertMsg( e, m ) ( e > 0 ) ? : \
 ({\
-printf(ANSI_COLOR_RED "Assertion Failed (Expression = %d)\n"ANSI_COLOR_RESET, e);\
-printf(ANSI_COLOR_YELLOW "Blame: %s => function: %s => line: %d\n"\
+printf(ANSI_COLOR_RED "Assertion %s Failed [= %d]\n"ANSI_COLOR_RESET, __STRING(e), e);\
+printf(ANSI_COLOR_YELLOW "\tBlame: %s => function: %s => line: %d\n"\
 ANSI_COLOR_RESET, __FILE__, __func__, __LINE__);\
-printf(ANSI_COLOR_CYAN "Associated Info: " m ANSI_COLOR_RESET);\
+printf(ANSI_COLOR_CYAN "\tAssociated Info: " m ANSI_COLOR_RESET);\
 exit(0);\
 })
 
 #define cAssert( e ) ( e > 0 ) ? : \
 ({\
-printf(ANSI_COLOR_RED "Assertion Failed (Expr = %d)\n"ANSI_COLOR_RESET, e);\
-printf(ANSI_COLOR_YELLOW "Blame: %s => function: %s => line: %d\n"\
+printf(ANSI_COLOR_RED "Assertion %s Failed [= %d]\n"ANSI_COLOR_RESET, __STRING(e), e);\
+printf(ANSI_COLOR_YELLOW "\tBlame: %s => function: %s => line: %d\n"\
 ANSI_COLOR_RESET, __FILE__, __func__, __LINE__);\
 exit(0);\
 })
