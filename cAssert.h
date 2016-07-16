@@ -21,21 +21,21 @@
 #define cAssertMsg( e, m ) ( e == 1 ) ? : \
 ({\
 printf(\
-ANSI_COLOR_RED\
-	"Assertion %s failed\n"\
+	ANSI_COLOR_RED "Assertion %s failed\n"\
 	ANSI_COLOR_RESET\
 	, __STRING(e));\
 printf(\
-	ANSI_COLOR_CYAN\
-	"\tBlame: %s => function: %s => line: %d\n"\
+	ANSI_COLOR_CYAN"\tBlame: "\
+	ANSI_COLOR_YELLOW"%s"\
+	ANSI_COLOR_CYAN" => function: "\
+	ANSI_COLOR_YELLOW"%s"\
+	ANSI_COLOR_CYAN" => line: "\
+	ANSI_COLOR_YELLOW"%d\n"\
 	ANSI_COLOR_RESET,\
-__FILE__, __func__, __LINE__);\
+	__FILE__, __func__, __LINE__);\
 printf(\
-	ANSI_COLOR_CYAN\
-	"\tAssociated Info: "\
-	ANSI_COLOR_RESET\
-	ANSI_COLOR_YELLOW\
-	m\
+	ANSI_COLOR_CYAN"\tAssociated Info: "\
+	ANSI_COLOR_YELLOW m\
 	ANSI_COLOR_RESET);\
 exit(0);\
 })
@@ -43,14 +43,17 @@ exit(0);\
 #define cAssert( e ) ( e == 1 ) ? : \
 ({\
 printf(\
-	ANSI_COLOR_RED\
-	"Assertion %s failed\n"\
+	ANSI_COLOR_RED"Assertion %s failed\n"\
 	ANSI_COLOR_RESET\
 	, __STRING(e));\
 printf(\
-	ANSI_COLOR_CYAN\
-	"\tBlame: %s => function: %s => line: %d\n"\
-	ANSI_COLOR_RESET\
-	, __FILE__, __func__, __LINE__);\
+	ANSI_COLOR_CYAN"\tBlame: "\
+	ANSI_COLOR_YELLOW"%s"\
+	ANSI_COLOR_CYAN" => function: "\
+	ANSI_COLOR_YELLOW"%s"\
+	ANSI_COLOR_CYAN" => line: "\
+	ANSI_COLOR_YELLOW"%d\n"\
+	ANSI_COLOR_RESET,\
+	__FILE__, __func__, __LINE__);\
 exit(0);\
 })
