@@ -20,12 +20,12 @@
 		NDEBUG will disable these at compile time.
 
 	*/
-	#define infoMagenta(s) (printf(ANSI_MAGENTA s ANSI_RESET))
-	#define infoRed(s) (printf(ANSI_RED s ANSI_RESET))
-	#define infoGreen(s) (printf(ANSI_GREEN s ANSI_RESET))
-	#define infoYellow(s) (printf(ANSI_YELLOW s ANSI_RESET))
-	#define infoBlue(s) (printf(ANSI_BLUE s ANSI_RESET))
-	#define infoCyan(s) (printf(ANSI_CYAN s ANSI_RESET))
+	#define infoMagenta(s) printf(ANSI_MAGENTA s ANSI_RESET)
+	#define infoRed(s)     printf(ANSI_RED s ANSI_RESET)
+	#define infoGreen(s)   printf(ANSI_GREEN s ANSI_RESET)
+	#define infoYellow(s)  printf(ANSI_YELLOW s ANSI_RESET)
+	#define infoBlue(s)    printf(ANSI_BLUE s ANSI_RESET)
+	#define infoCyan(s)    printf(ANSI_CYAN s ANSI_RESET)
 
 	/*
 		Coloured Asserion.
