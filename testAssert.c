@@ -10,13 +10,14 @@ int main( int argc, char **argv ) {
    int np = 1;
 
    printf("\nDebug messages look like...\n\n");
+
    // Print some info messages
    infoBlue("This is a Blue info message\n");
-   infoMagenta("This is a Magenta info message\n");
    infoGreen("This is a Green info message\n");
+   infoMagenta("This is a Magenta info message\n");
 
    printf("\nVerbose assertions look like...\n\n");
    // Assert a condition, along with a debug note.
-   cAssertMsg( (p == np), "Testing global [p] vs local [np].\n");
-   return 0;
+   cAssertMsg( (p == np), "Testing global [p] vs local [np].\n\n");
+   return EXIT_SUCCESS;
 }
