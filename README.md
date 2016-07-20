@@ -6,6 +6,11 @@ As an added bonus, cAssert includes colour highlighted info messages that are tr
 
 ![alt text](https://s32.postimg.org/wa5mn0h0l/Selection_129.png;)
 
+####Example case:
+
+![alt text](https://s32.postimg.org/cft4ddbwl/Selection_131.png;)
+![alt text](https://s32.postimg.org/894fnzdnp/Selection_130.png;)
+
 -> Code
 -> Debug
 -> #define NDEBUG
