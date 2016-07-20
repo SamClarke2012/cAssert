@@ -8,11 +8,12 @@
 #ifndef NDEBUG
     // ANSI Colour escape codes
     #define ANSI_RED     "\x1b[31m"
+    #define ANSI_BLUE    "\x1b[34m"
+    #define ANSI_CYAN    "\x1b[36m"
     #define ANSI_GREEN   "\x1b[32m"
     #define ANSI_YELLOW  "\x1b[33m"
-    #define ANSI_BLUE    "\x1b[34m"
     #define ANSI_MAGENTA "\x1b[35m"
-    #define ANSI_CYAN    "\x1b[36m"
+    // ANSI Reset code
     #define ANSI_RESET   "\x1b[0m"
     /*
         Coloured 'Info' printfs.
@@ -20,13 +21,12 @@
         NDEBUG will disable these at compile time.
 
     */
-    #define infoMagenta(s) printf(ANSI_MAGENTA s ANSI_RESET)
-    #define infoRed(s)     printf(ANSI_RED s ANSI_RESET)
-    #define infoGreen(s)   printf(ANSI_GREEN s ANSI_RESET)
-    #define infoYellow(s)  printf(ANSI_YELLOW s ANSI_RESET)
-    #define infoBlue(s)    printf(ANSI_BLUE s ANSI_RESET)
-    #define infoCyan(s)    printf(ANSI_CYAN s ANSI_RESET)
-
+    #define infoRed(s)     printf( ANSI_RED     s ANSI_RESET ) 
+    #define infoBlue(s)    printf( ANSI_BLUE    s ANSI_RESET )
+    #define infoCyan(s)    printf( ANSI_CYAN    s ANSI_RESET )
+    #define infoGreen(s)   printf( ANSI_GREEN   s ANSI_RESET )
+    #define infoYellow(s)  printf( ANSI_YELLOW  s ANSI_RESET )
+    #define infoMagenta(s) printf( ANSI_MAGENTA s ANSI_RESET )
     /*
         Coloured Asserion.
         Key information is highlighted for easier
@@ -49,7 +49,6 @@
             __FILE__, __func__, __LINE__);      \
         abort();                                \
     })
-
     /*
         Coloured Asserion with info message.
         Info message should be something insightful
@@ -76,16 +75,15 @@
             ANSI_RESET);                        \
         abort();                                \
     })
-
 #else
     // No assert MACROS
-    #define cAssertMsg( e, m )  ((void)0)
     #define cAssert( e )        ((void)0)
+    #define cAssertMsg( e, m )  ((void)0)
     // No info MACROS
-    #define infoMagenta(s)      ((void)0)
     #define infoRed(s)          ((void)0)
-    #define infoGreen(s)        ((void)0)
-    #define infoYellow(s)       ((void)0)
     #define infoBlue(s)         ((void)0)
     #define infoCyan(s)         ((void)0)
+    #define infoGreen(s)        ((void)0)
+    #define infoYellow(s)       ((void)0)
+    #define infoMagenta(s)      ((void)0)
 #endif
